@@ -1,0 +1,50 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-icon {
+  border: 1px solid;
+  border-radius: 50%;
+  border: none;
+  height: 50px;
+  width: 50px;
+  background-image: url(/img/IAM.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-image {
+  border: 1px solid;
+  height: 450px;
+  background-image: url(/img/lemuru.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+nav {
+  display: flex;
+}
+
+.left-rounded {
+  border-radius: 12px 0 0 12px;
+}
+
+.right-rounded {
+  border-radius: 0 12px 12px 0;
+}
+nav > a {
+  border: 1px solid;
+
+  padding: 8px;
+  color: black;
+  text-decoration: none;
+}
+.content {
+  /* opsional */
+  height: 500px;
+}
+
+footer {
+  text-align: center;
+}
