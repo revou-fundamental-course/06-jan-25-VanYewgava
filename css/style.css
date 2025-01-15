@@ -14,18 +14,21 @@
   background-position: center;
 }
 
-.banner-image1 {
+.banner-image {
   border: 1px solid;
   height: 450px;
-  background-image: url(/06-jan-25-VanYewgava/img/lemuru.jpeg);
   background-size: cover;
   background-position: center;
 }
 
-.banner-image2 {
+.banner-image-1 {
+  background-image: url(/06-jan-25-VanYewgava/img/deles.jpeg);
+}
+.banner-image-2 {
   background-image: url(/06-jan-25-VanYewgava/img/juwi.jpeg);
-  background-size: cover;
-  background-position: center;
+}
+.banner-image-3 {
+  background-image: url(/06-jan-25-VanYewgava/img/lemuru.jpeg);
 }
 
 nav {
@@ -55,7 +58,7 @@ footer {
   text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
   .main-header {
     flex-direction: column;
   }

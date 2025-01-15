@@ -1,30 +1,48 @@
-document.getElementById("kirim").addEventListener("click", function () {
-  const nama = nameInput.value;
-  if (name == "") {
-    document.getElementById("error-name").innerHTML = "Namatidak boleh Kosong!";
-  } else {
-    document.getElementById("name").innerHTML = nama;
-  }
-});
-function validateForm() {
+document.forms["message-form"].addEventListener("submit", function (event) {
+  event.preventDefault(); // Mencegah submit form secara default
+
   const name = document.forms["message-form"]["full-name"].value;
-  const birthDate = document.forms["message-fom"]["birth-date"].value;
+  const birthDate = document.forms["message-form"]["birth-date"].value;
   const gender = document.forms["message-form"]["gender"].value;
   const messages = document.forms["message-form"]["messages"].value;
 
-  if (name == "" || birthDate == "" || gender == "" || messages == "") {
-    alert("Tidak boleh ada yang kosong");
-    return false;
+  if (name === "" || birthDate === "" || gender === "" || messages === "") {
+    alert("Tidak boleh ada yang kosong!");
+    return;
   }
 
   setSenderUI(name, birthDate, gender, messages);
-
-  return false;
-}
+});
 
 function setSenderUI(name, birthDate, gender, messages) {
-  document.getElementById("sender-full-name").innerHTML = name;
-  document.getElementById("sender-birth-date").innerHTML = birthDate;
-  document.getElementById("sender-gender").innerHTML = gender;
-  document.getElementById("sender-messages").innerHTML = messages;
+  document.getElementById("sender-full-name").textContent = name;
+  document.getElementById("sender-birth-date").textContent = birthDate;
+  document.getElementById("sender-gender").textContent = gender;
+  document.getElementById("sender-messages").textContent = messages;
 }
+
+let indexBanner = 0;
+changeBackground();
+
+function nextBanner() {
+  indexBanner += 1;
+  changeBackground();
+}
+
+function changeBackground() {
+  let bannerList = document.getElementsByClassName("banner-image");
+  console.log(bannerList.length);
+
+  console.log(indexBanner);
+  if (indexBanner > bannerList.length - 1) {
+    //reset indexBanner
+    indexBanner = 0;
+  }
+
+  for (let i = 0; i < bannerList.length; i++) {
+    bannerList[i].style.display = "none";
+  }
+  bannerList[indexBanner].style.display = "block";
+}
+
+setInterval(nextBanner, 3000);
