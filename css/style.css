@@ -1,40 +1,187 @@
+/* Styling untuk header utama */
 .main-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Mengatur jarak antar elemen header */
+  align-items: center; /* Menjaga elemen dalam posisi vertikal tengah */
 }
+
+/* Ikon logo berbentuk lingkaran */
 .logo-icon {
   border: 1px solid;
-  border-radius: 50%;
+  border-radius: 50%; /* Membuat bentuk lingkaran */
   border: none;
   height: 50px;
   width: 50px;
-  background-image: url(/06-jan-25-VanYewgava/img/IAM.png);
+  background-image: url(/06-jan-25-VanYewgava/img/profile.jpeg); /* Gambar logo */
   background-size: cover;
   background-position: center;
 }
 
-.banner-image {
-  border: 1px solid;
-  height: 450px;
-  background-size: cover;
-  background-position: center;
-}
-
-.banner-image-1 {
-  background-image: url(/06-jan-25-VanYewgava/img/deles.jpeg);
-}
-.banner-image-2 {
-  background-image: url(/06-jan-25-VanYewgava/img/juwi.jpeg);
-}
-.banner-image-3 {
-  background-image: url(/06-jan-25-VanYewgava/img/lemuru.jpeg);
-}
-
-nav {
+/* Styling untuk bagian ikon dan nama */
+.ikon-dan-nama {
   display: flex;
 }
 
+/* Nama dengan gaya teks dan gradasi */
+.nama-aku {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: -5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #007bff, #ff6347); /* Gradasi warna */
+  -webkit-background-clip: text; /* Memotong latar belakang untuk teks */
+  -webkit-text-fill-color: transparent; /* Membuat warna teks transparan dan memberi efek gradasi */
+}
+
+/* Styling untuk halaman utama */
+#home-page {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(
+    135deg,
+    #f0f8ff,
+    #e6f7ff
+  ); /* Gradasi latar belakang */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+  position: relative;
+  overflow: hidden; /* Menyembunyikan bagian yang overflow */
+}
+
+/* Efek visual tambahan untuk elemen sebelum dan sesudah halaman utama */
+#home-page::before,
+#home-page::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  transform: rotate(45deg); /* Memutar elemen */
+}
+
+/* Judul utama dengan gaya teks */
+#home-page h1 {
+  font-size: 3rem;
+  color: #007bff; /* Warna biru */
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+/* Styling untuk elemen span dalam judul */
+#home-page h1 span {
+  color: #ff6347;
+  font-style: italic;
+  text-decoration: none;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6347, #ffa07a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Styling untuk teks di paragraf halaman utama */
+#home-page p {
+  font-size: 1.3rem;
+  color: #444;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* Styling untuk gambar banner */
+.banner-image {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  margin: 30px auto;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  border: 5px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Efek saat hover pada banner */
+.banner-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+}
+
+/* Styling untuk setiap gambar banner */
+.banner-image-1 {
+  background-image: url("/06-jan-25-VanYewgava/img/sxc.jpeg");
+}
+
+.banner-image-2 {
+  background-image: url("/06-jan-25-VanYewgava/img/yls.jpeg");
+}
+
+.banner-image-3 {
+  background-image: url("/06-jan-25-VanYewgava/img/mengajar.jpeg");
+}
+
+/* Teks overlay pada gambar banner */
+.banner-image-text {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Efek pada teks saat hover pada banner */
+.banner-image:hover .banner-image-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Styling untuk navigasi */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk link dalam navigasi */
+nav > a {
+  text-decoration: none;
+  color: white;
+  padding: 3px 3px;
+  border-radius: 3px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Efek saat hover pada link navigasi */
+nav > a:hover {
+  background-color: #0056b3;
+  color: #eaf4ff;
+  text-decoration: underline;
+}
+
+/* Styling khusus untuk link di kiri dan kanan */
 .left-rounded {
   border-radius: 5px 0 0 5px;
 }
@@ -42,22 +189,194 @@ nav {
 .right-rounded {
   border-radius: 0 5px 5px 0;
 }
-nav > a {
-  border: 1px solid;
 
-  padding: 8px;
-  color: black;
-  text-decoration: none;
-}
-.content {
-  /* opsional */
-  height: 500px;
+/* Styling untuk bagian profil */
+#our-profile {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Efek visual tambahan untuk profil */
+#our-profile::before,
+#our-profile::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  transform: rotate(45deg);
+}
+
+/* Judul profil dengan gaya teks */
+#our-profile h1 {
+  font-size: 2.5rem;
+  color: #007bff;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1.5px;
+}
+
+/* Styling untuk gambar profil */
+.ikon-profile {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+.ikon-profile img {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  border: 5px solid rgba(0, 123, 255, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efek hover pada gambar profil */
+.ikon-profile img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk highlight (teks yang ditekankan) */
+.highlight {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff4500;
+  font-family: "Roboto", sans-serif;
+  margin: 10px auto 30px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* Styling untuk isi profil */
+.content-profile {
+  text-align: justify;
+  text-indent: 40px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  z-index: 1;
+  padding: 0 15px;
+}
+
+.content-profile p {
+  margin-bottom: 20px;
+}
+
+/* Styling untuk bagian pesan */
+#message-us h1 {
+  font-size: 2.5rem;
+  color: #ff4500;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#message-us h1::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #007bff;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Styling untuk hover pada teks isi profil */
+.content-profile p:hover {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+/* Styling untuk form pesan */
+.content-message {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk form dalam pesan */
+.content-message form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content-message form label {
+  font-weight: bold;
+}
+
+.content-message form input,
+.content-message form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Styling untuk tombol submit dalam form */
+.content-message form input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+/* Efek hover pada tombol submit */
+.content-message form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Styling untuk output dari form */
+.form-output {
+  width: 100%;
+  height: 290px;
+  max-width: 500px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+.form-output p {
+  margin: 10px auto;
+  font-weight: bold;
+}
+
+.form-output span {
+  font-weight: normal;
+  color: #555;
+}
+
+/* Styling untuk footer */
 footer {
   text-align: center;
 }
 
+/* Responsif untuk layar kecil (max-width 480px) */
 @media only screen and (max-width: 480px) {
   .main-header {
     flex-direction: column;
@@ -75,5 +394,14 @@ footer {
 
   .logo-icon {
     margin-bottom: 14px;
+  }
+
+  .content-message {
+    display: block;
+    padding: 8px;
+    gap: 8px;
+  }
+  .ikon-dan-nama {
+    display: contents;
   }
 }

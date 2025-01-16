@@ -1,74 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta informasi untuk karakter set dan viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Menautkan file CSS eksternal untuk gaya -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <!-- Logo & Navigation -->
     <header class="main-header">
-      <!-- logo -->
-      <div class="logo-icon"></div>
-      <!-- navigation -->
+      <!-- Bagian logo dan nama -->
+      <div class="ikon-dan-nama">
+        <div class="logo-icon"></div>
+        <!-- Logo icon (belum diatur) -->
+        <div class="nama-aku">
+          <h3>ACHMAD IVAN YUGAVA</h3>
+          <!-- Nama pengguna -->
+        </div>
+      </div>
+      <!-- Navigasi utama -->
       <nav>
+        <!-- Tautan untuk navigasi antar bagian halaman -->
         <a href="#home-page" class="left-rounded">Home</a>
         <a href="#our-profile">Our Profile</a>
-        <a href="#portfolio">Portfolio</a>
         <a href="#message-us" class="right-rounded">Message Us</a>
       </nav>
     </header>
     <hr />
 
-    <!-- Main Content -->
+    <!-- Konten utama halaman -->
     <main>
-      <!-- Home Page -->
+      <!-- Bagian Home Page -->
       <section>
-        <!-- title -->
+        <!-- Header untuk halaman utama -->
         <header id="home-page">
-          <h1>Halo... <span id="user-greeting">User</span></h1>
-          <p>Selamat datang di Website kami</p>
-          <p>Website usaha Ikan Asin khas Kota Pekalongan sejak tahun 1970.</p>
+          <h1>Hello... <span id="user-greeting">User</span></h1>
+          <p>Welcome to my portfolio website</p>
         </header>
-        <div class="banner-image banner-image-1"></div>
-        <div class="banner-image banner-image-2"></div>
-        <div class="banner-image banner-image-3"></div>
+
+        <!-- Gambar banner dengan teks overlay -->
+        <div class="banner-image banner-image-1">
+          <span class="banner-image-text">StudentsxCEOs #7</span>
+        </div>
+        <div class="banner-image banner-image-2">
+          <span class="banner-image-text">Youth Leader Summit 2024</span>
+        </div>
+        <div class="banner-image banner-image-3">
+          <span class="banner-image-text">FSM Mengajar</span>
+        </div>
       </section>
 
-      <!-- Our Profile -->
+      <!-- Bagian Profil Saya -->
       <section>
-        <!-- title -->
+        <!-- Header untuk profil -->
         <header id="our-profile">
-          <h1>Our Profile</h1>
+          <h1>My Profile</h1>
+          <!-- Foto profil -->
+          <div class="ikon-profile">
+            <img src="/06-jan-25-VanYewgava/img/profilefix2.jpeg" alt="" />
+          </div>
+          <!-- Ringkasan profil -->
+          <h4 class="highlight">
+            Undergraduate student majoring in Informatics Diponegoro University
+            | Operating Officer in StudentsxCEOs Semarang Batch 7 | Manager of
+            Ceremony Youth Leader Summit 2024
+          </h4>
+        </header>
+        <!-- Deskripsi tentang pengalaman dan latar belakang -->
+        <div class="content-profile">
           <p>
-            Usaha Ikan Asin kami telah didirikan sejak tahun 1970 oleh Bapak
-            Haji Muzali. Usaha ini telah menjadi pelopor pengolahan ikan asin
-            berkualitas di Indonesia. Dengan memadukan metode tradisional dan
-            inovasi modern, kami menyediakan produk yang tidak hanya lezat
-            tetapi juga mendukung keberlanjutan perikanan lokal.
+            As the Operating Officer at StudentsxCEOs Semarang, my focus is on
+            orchestrating events that foster leadership and innovative
+            thinking...
           </p>
-        </header>
-        <div class="content"></div>
+          <p>
+            My role involves meticulous planning and seamless coordination...
+          </p>
+        </div>
       </section>
 
-      <!-- Portfolio -->
+      <!-- Bagian Message Us (Formulir Kontak) -->
       <section>
-        <!-- title -->
-        <header id="portfolio">
-          <h1>Portfolio</h1>
-        </header>
-        <div class="content"></div>
-      </section>
-
-      <!-- Message Us -->
-      <section>
-        <!-- title -->
+        <!-- Header untuk formulir kontak -->
         <header id="message-us">
           <h1>Message Us</h1>
         </header>
-        <div class="content">
+        <div class="content-message">
+          <!-- Formulir untuk mengirim pesan -->
           <form name="message-form" onsubmit="return validateForm()">
+            <!-- Input untuk nama -->
             <div>
               <label for="nama">Nama:</label>
               <input
@@ -79,10 +101,12 @@
               />
               <br />
 
+              <!-- Input untuk tanggal lahir -->
               <label for="tanggal-lahir">Tanggal Lahir:</label>
               <input type="date" name="birth-date" required />
               <br />
 
+              <!-- Input untuk jenis kelamin -->
               <label for="Jenis-kelamin">Jenis Kelamin:</label>
               <input
                 type="radio"
@@ -102,13 +126,16 @@
               <label for="female">Perempuan</label>
               <br />
 
+              <!-- Input untuk pesan -->
               <label for="pesan">Pesan:</label>
               <textarea name="messages" id="" placeholder="Pesan"></textarea>
               <br />
 
+              <!-- Tombol untuk mengirim formulir -->
               <input type="submit" value="Submit" />
             </div>
           </form>
+          <!-- Output dari pesan yang dikirimkan -->
           <div class="form-output">
             <p>Nama: <span id="sender-full-name"></span></p>
             <p>Tanggal Lahir: <span id="sender-birth-date"></span></p>
@@ -122,8 +149,11 @@
     <hr />
     <!-- Footer -->
     <footer>
-      <p>&copy; 2025 - All right reserved</p>
+      <!-- Copyright halaman -->
+      <p>&copy; 2025 - Achmad Ivan Yugava</p>
     </footer>
+
+    <!-- Menautkan file JavaScript untuk validasi formulir -->
     <script src="./js/script.js"></script>
   </body>
 </html>
