@@ -1,6 +1,27 @@
+// Ambil elemen greeting
 const userGreeting = document.getElementById("user-greeting");
-let userName = prompt("Masukan Nama Anda:", "User");
-if (userName) userGreeting.textContent = userName;
+
+// Fungsi untuk menampilkan nama di website
+function displayGreeting(name) {
+  userGreeting.textContent = name || "Punten Mamang";
+}
+
+// Cek apakah nama sudah disimpan di Local Storage
+let userName = localStorage.getItem("userName");
+
+// Jika nama belum ada, minta pengguna memasukkan nama
+if (!userName) {
+  while (!userName || userName.trim() === "") {
+    userName = prompt(
+      "Masukkan nama panggilan Anda (tidak boleh kosong):"
+    ).trim();
+  }
+  // Simpan nama ke Local Storage
+  localStorage.setItem("userName", userName);
+}
+
+// Tampilkan nama di website
+displayGreeting(userName);
 
 document.forms["message-form"].addEventListener("submit", function (event) {
   event.preventDefault(); // Mencegah submit form secara default
