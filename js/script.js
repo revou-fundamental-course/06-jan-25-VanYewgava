@@ -11,34 +11,46 @@ let userName = localStorage.getItem("userName");
 
 // Jika nama belum ada, minta pengguna memasukkan nama
 if (!userName) {
-  while (!userName || userName.trim() === "") {
-    userName = prompt(
-      "Masukkan nama panggilan Anda (tidak boleh kosong):"
-    ).trim();
+  while (true) {
+    userName = prompt("Masukkan nama panggilan Anda (tidak boleh kosong):");
+    if (userName === null) {
+      userName = "Punten Mamang"; // Fallback jika pengguna memilih "Batal"
+      break;
+    } else if (userName.trim() !== "") {
+      userName = userName.trim();
+      break;
+    }
   }
-  // Simpan nama ke Local Storage
   localStorage.setItem("userName", userName);
 }
 
-// Tampilkan nama di website
-displayGreeting(userName);
+// Tunggu hingga DOM selesai dimuat
+document.addEventListener("DOMContentLoaded", function () {
+  // Tampilkan nama di website
+  displayGreeting(userName);
 
-document.forms["message-form"].addEventListener("submit", function (event) {
-  event.preventDefault(); // Mencegah submit form secara default
+  // Validasi dan tampilkan pesan pada form submit
+  document.forms["message-form"].addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  const name = document.forms["message-form"]["full-name"].value;
-  const birthDate = document.forms["message-form"]["birth-date"].value;
-  const gender = document.forms["message-form"]["gender"].value;
-  const messages = document.forms["message-form"]["messages"].value;
+    const name = document.forms["message-form"]["full-name"].value.trim();
+    const birthDate = document.forms["message-form"]["birth-date"].value;
+    const gender = document.querySelector('input[name="gender"]:checked');
+    const messages = document.forms["message-form"]["messages"].value.trim();
 
-  if (name === "" || birthDate === "" || gender === "" || messages === "") {
-    alert("Tidak boleh ada yang kosong!");
-    return;
-  }
+    if (!name || !birthDate || !gender || !messages) {
+      alert("Tidak boleh ada yang kosong!");
+      return;
+    }
 
-  setSenderUI(name, birthDate, gender, messages);
+    setSenderUI(name, birthDate, gender.value, messages);
+  });
+
+  // Atur banner otomatis
+  setInterval(nextBanner, 3000);
 });
 
+// Fungsi untuk menampilkan data pengirim
 function setSenderUI(name, birthDate, gender, messages) {
   document.getElementById("sender-full-name").textContent = name;
   document.getElementById("sender-birth-date").textContent = birthDate;
@@ -47,8 +59,6 @@ function setSenderUI(name, birthDate, gender, messages) {
 }
 
 let indexBanner = 0;
-changeBackground();
-
 function nextBanner() {
   indexBanner += 1;
   changeBackground();
@@ -56,12 +66,9 @@ function nextBanner() {
 
 function changeBackground() {
   let bannerList = document.getElementsByClassName("banner-image");
-  console.log(bannerList.length);
 
-  console.log(indexBanner);
   if (indexBanner > bannerList.length - 1) {
-    //reset indexBanner
-    indexBanner = 0;
+    indexBanner = 0; // Reset indexBanner
   }
 
   for (let i = 0; i < bannerList.length; i++) {
@@ -69,5 +76,3 @@ function changeBackground() {
   }
   bannerList[indexBanner].style.display = "block";
 }
-
-setInterval(nextBanner, 3000);
